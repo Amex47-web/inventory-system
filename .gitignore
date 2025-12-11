@@ -1,0 +1,69 @@
+# --- Django Core ---
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+
+# --- Render / Deployment ---
+# Render runs 'collectstatic' automatically, so we don't upload this folder
+staticfiles/
+
+# --- Python / Environment ---
+*.py[cod]
+*$py.class
+.Python
+build/
+dist/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# --- Virtual Environments (Important!) ---
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# --- macOS (Macbook specific junk) ---
+.DS_Store
+
+# --- VS Code (Editor settings) ---
+.vscode/
+
+# --- Testing / Coverage ---
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# --- MyPy / Type Checking ---
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# --- Jupyter Notebooks ---
+.ipynb_checkpoints

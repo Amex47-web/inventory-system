@@ -1,0 +1,257 @@
+{% load static %}
+{% include 'stock/headers.html' %}
+
+<div class="nk-content ">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                
+                <div class="nk-block-head nk-block-head-sm">
+                    <div class="nk-block-between">
+                        <div class="nk-block-head-content">
+                            <h3 class="nk-block-title page-title">Inventory Dashboard</h3>
+                        </div>
+                        <div class="nk-block-head-content">
+                            <div class="toggle-wrap nk-block-tools-toggle">
+                                <a href="#" class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="pageMenu"><em class="icon ni ni-more-v"></em></a>
+                                <div class="toggle-expand-content" data-content="pageMenu">
+                                    <ul class="nk-block-tools g-3">
+                                        <li class="nk-block-tools-opt"><a href="/view_history" class="btn btn-primary"><em class="icon ni ni-reports"></em><span>Reports</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nk-block">
+                    <div class="row g-gs">
+                        
+                        <div class="col-xxl-3 col-sm-6">
+                            <div class="card bg-primary text-white">
+                                <div class="nk-ecwg nk-ecwg6">
+                                    <div class="card-inner">
+                                        <div class="card-title-group">
+                                            <div class="card-title">
+                                                <h6 class="title text-white">Total Inventory Value</h6>
+                                            </div>
+                                        </div>
+                                        <div class="data">
+                                            <div class="data-group">
+                                                <div class="amount text-white">₹ {{ total_value }}</div>
+                                            </div>
+                                            <div class="info text-white">
+                                                <span class="sub-text text-white">Asset Value (Qty × Price)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-3 col-sm-6">
+                            <div class="card">
+                                <div class="nk-ecwg nk-ecwg6">
+                                    <div class="card-inner">
+                                        <div class="card-title-group">
+                                            <div class="card-title">
+                                                <h6 class="title">Total Products</h6>
+                                            </div>
+                                        </div>
+                                        <div class="data">
+                                            <div class="data-group">
+                                                <div class="amount">{{ total_items }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-3 col-sm-6">
+                            <div class="card">
+                                <div class="nk-ecwg nk-ecwg6">
+                                    <div class="card-inner">
+                                        <div class="card-title-group">
+                                            <div class="card-title">
+                                                <h6 class="title">Total Qty on Hand</h6>
+                                            </div>
+                                        </div>
+                                        <div class="data">
+                                            <div class="data-group">
+                                                <div class="amount">{{ total_quantity }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-3 col-sm-6">
+                            <div class="card bg-danger text-white">
+                                <div class="nk-ecwg nk-ecwg6">
+                                    <div class="card-inner">
+                                        <div class="card-title-group">
+                                            <div class="card-title">
+                                                <h6 class="title text-white">Low Stock Alerts</h6>
+                                            </div>
+                                        </div>
+                                        <div class="data">
+                                            <div class="data-group">
+                                                <div class="amount text-white">{{ low_stock_items.count }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-6">
+                            <div class="card card-full">
+                                <div class="card-inner">
+                                    <div class="card-title-group mb-3">
+                                        <div class="card-title">
+                                            <h6 class="title">Inventory Analysis (ABC Method)</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row text-center">
+                                        <div class="col-4">
+                                            <h4 class="text-success">{{ abc.A }}</h4>
+                                            <span class="sub-text">Class A (High Value)</span>
+                                        </div>
+                                        <div class="col-4">
+                                            <h4 class="text-warning">{{ abc.B }}</h4>
+                                            <span class="sub-text">Class B (Medium)</span>
+                                        </div>
+                                        <div class="col-4">
+                                            <h4 class="text-muted">{{ abc.C }}</h4>
+                                            <span class="sub-text">Class C (Low)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-6">
+                            <div class="card card-full">
+                                <div class="card-inner">
+                                    <div class="card-title-group mb-3">
+                                        <div class="card-title">
+                                            <h6 class="title text-danger"><em class="icon ni ni-alert-circle"></em> Critical Stock (Reorder Now)</h6>
+                                        </div>
+                                    </div>
+                                    {% if low_stock_items %}
+                                    <table class="table table-sm table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Item</th>
+                                                <th>Current Qty</th>
+                                                <th>Reorder Level</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for item in low_stock_items %}
+                                            <tr>
+                                                <td>{{ item.item_name }}</td>
+                                                <td class="text-danger fw-bold">{{ item.quantity }}</td>
+                                                <td>{{ item.re_order }}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                    {% else %}
+                                    <p class="text-success">All stock levels are healthy.</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-6">
+                            <div class="card card-full">
+                                <div class="nk-ecwg nk-ecwg8 h-100">
+                                    <div class="card-inner">
+                                        <div class="card-title-group mb-3">
+                                            <div class="card-title">
+                                                <h6 class="title">Stock Levels by Item</h6>
+                                            </div>
+                                        </div>
+                                        <div class="nk-ecwg8-ck" style="height: 350px;">
+                                            <canvas id="solidLineChart"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-6">
+                            <div class="card card-full">
+                                <div class="nk-ecwg nk-ecwg8 h-100">
+                                    <div class="card-inner">
+                                        <div class="card-title-group mb-3">
+                                            <div class="card-title">
+                                                <h6 class="title">Issued vs Received History</h6>
+                                            </div>
+                                        </div>
+                                        <div class="nk-ecwg8-ck" style="height: 350px;">
+                                            <canvas id="solidDataChart"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div></div></div>
+        </div>
+    </div>
+</div>
+
+{% include 'stock/footers.html' %}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+
+<script>
+    // 1. Bar Chart: Stock Levels
+    var ctx = document.getElementById('solidLineChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [{% for item in label_item %}'{{ item|escapejs }}',{% endfor %}],
+            datasets: [{
+                label: 'Stock Quantity',
+                data: {{ data|safe }},
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            maintainAspectRatio: false, // FIX: Forces chart to respect container height
+            scales: { yAxes: [{ ticks: { beginAtZero: true } }] }
+        }
+    });
+
+    // 2. Line Chart: Issued vs Received
+    var ctx2 = document.getElementById('solidDataChart').getContext('2d');
+    var myChart2 = new Chart(ctx2, {
+        type: 'line',
+        data: {
+            labels: [{% for item in label_item %}'{{ item|escapejs }}',{% endfor %}],
+            datasets: [{
+                label: 'Issued',
+                data: {{ issue_data|safe }},
+                borderColor: 'rgba(255, 99, 132, 1)',
+                fill: false
+            },
+            {
+                label: 'Received',
+                data: {{ receive_data|safe }},
+                borderColor: 'rgba(75, 192, 192, 1)',
+                fill: false
+            }]
+        },
+        options: {
+            maintainAspectRatio: false, // FIX: Forces chart to respect container height
+            scales: { yAxes: [{ ticks: { beginAtZero: true } }] }
+        }
+    });
+</script>

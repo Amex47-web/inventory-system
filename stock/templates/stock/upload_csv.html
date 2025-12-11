@@ -1,0 +1,80 @@
+{% load static %}
+{% include 'stock/headers.html' %}
+
+<div class="nk-content">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="components-preview wide-md mx-auto">
+                    
+                    <div class="nk-block-head nk-block-head-lg">
+                        <div class="nk-block-head-content">
+                            <h4 class="nk-block-title">Bulk Import Stock</h4>
+                            <div class="nk-block-des">
+                                <p>Upload a CSV file to add multiple items at once.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nk-block">
+                        <div class="card card-bordered">
+                            <div class="card-inner">
+                                <h5 class="card-title">Upload CSV File</h5>
+                                <form method="POST" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    
+                                    <div class="form-group">
+                                        <div class="form-control-wrap">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" name="csv_file" id="customFile" accept=".csv" required>
+                                                <label class="custom-file-label" for="customFile">Choose file</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-lg btn-primary">Start Import</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="card card-bordered mt-4">
+                            <div class="card-inner">
+                                <h6 class="title">Instructions & Sample Format</h6>
+                                <p>Ensure your CSV file has exactly these headers (Case Sensitive):</p>
+                                <table class="table table-bordered table-sm">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th>Category</th>
+                                            <th>Item Name</th>
+                                            <th>Quantity</th>
+                                            <th>Reorder Level</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Electronics</td>
+                                            <td>iPhone 15</td>
+                                            <td>50</td>
+                                            <td>10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Furniture</td>
+                                            <td>Office Chair</td>
+                                            <td>20</td>
+                                            <td>5</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'stock/footers.html' %}
