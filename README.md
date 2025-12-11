@@ -63,7 +63,7 @@ Uses **Linear Regression (Scikit-Learn)** to analyze historical usage patterns a
 
 ### **AI Inventory Forecast**
 *Predictive analytics showing burn rate and estimated stockout dates.*
-<img src="https://user-images.githubusercontent.com/89584431/213698869-f3516c2d-89d9-49d1-9f81-b0b3c32dd00b.png" alt="AI Forecast">
+<img src="<img width="2042" height="1184" alt="Image" src="https://github.com/user-attachments/assets/c20e1cdf-107a-4274-b053-549bbc19bf84" />" alt="AI Forecast">
 
 ### **Bulk Issue Cart**
 *Add multiple items to a cart and issue them in one go.*
