@@ -69,9 +69,6 @@ Uses **Linear Regression (Scikit-Learn)** to analyze historical usage patterns a
 *Add multiple items to a cart and issue them in one go.*
 <img src="https://user-images.githubusercontent.com/89584431/213712524-32478065-e0cd-45f7-939e-2f9d41c82f63.gif" alt="Bulk Cart">
 
-### **Stock List with QR Support**
-*Manage inventory with search, edit, delete, and history tracking.*
-<img src="https://user-images.githubusercontent.com/89584431/213707384-a08835e1-3322-40ac-b09f-186fa7a2b64f.png" alt="Stock List">
 
 ### **Login Page**
 *Secure and Robust authentication.*
