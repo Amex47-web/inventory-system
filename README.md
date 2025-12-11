@@ -2,7 +2,7 @@
 
 A robust, enterprise-grade Inventory Management System built with **Django**. This application goes beyond simple counting by integrating **Machine Learning** for demand forecasting, **QR Code scanning** for quick lookup, and a **Bulk Cart** system for efficient stock distribution.
 
-Live Demo: [https://amey-inventory.onrender.com](https://amey-inventory.onrender.com) *(Replace with your actual link)*
+Live Demo: https://inventory-system-amey.onrender.com
 
 ---
 
