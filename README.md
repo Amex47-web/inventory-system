@@ -73,6 +73,10 @@ Uses **Linear Regression (Scikit-Learn)** to analyze historical usage patterns a
 *Manage inventory with search, edit, delete, and history tracking.*
 <img src="https://user-images.githubusercontent.com/89584431/213707384-a08835e1-3322-40ac-b09f-186fa7a2b64f.png" alt="Stock List">
 
+### **Login Page**
+*Secure and Robust authentication.*
+<img src="<img width="2940" height="1604" alt="Image" src="https://github.com/user-attachments/assets/c6953a59-9483-4124-937a-0421b685136b" />" alt="Login page">
+
 ---
 
 ##  Local Installation Guide
