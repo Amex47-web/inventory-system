@@ -59,7 +59,7 @@ Uses **Linear Regression (Scikit-Learn)** to analyze historical usage patterns a
 
 ### **Smart Dashboard (Dark Mode)**
 *Real-time overview of assets, low stock alerts, and financial value.*
-<img src="https://user-images.githubusercontent.com/89584431/213697819-ff34d0eb-8b16-49b9-bc5b-947f9485269c.png" alt="Dashboard">
+<img src="<img width="2940" height="1602" alt="Image" src="https://github.com/user-attachments/assets/c6e971b5-2333-45fc-a34c-ebf5cc95e901" />" alt="Dashboard">
 
 ### **AI Inventory Forecast**
 *Predictive analytics showing burn rate and estimated stockout dates.*
