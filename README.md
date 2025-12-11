@@ -17,16 +17,16 @@ Uses **Linear Regression (Scikit-Learn)** to analyze historical usage patterns a
 - **Scan-to-View:** Use your laptop or phone camera to scan item QR codes.
 - **Instant Lookup:** deeply integrated with the search system for rapid inventory audits.
 
-### 🛒 3. Bulk Issue "Shopping Cart"
+###  3. Bulk Issue "Shopping Cart"
 - **Session-Based Cart:** Managers can add multiple items (Laptop, Mouse, Charger) to a temporary list.
 - **One-Click Checkout:** Issue all items to an employee in a single transaction, updating inventory instantly.
 
-### 📊 4. Financial & Activity Analytics
+###  4. Financial & Activity Analytics
 - **Asset Valuation:** Real-time calculation of Total Inventory Value (Quantity × Unit Price).
 - **Interactive Dashboards:** Chart.js integration for visual breakdown of Stock Levels, Categories, and In/Out history.
 - **ABC Analysis:** Automated categorization of high-value vs. low-value stock.
 
-### 🛡️ 5. Enterprise Security & UI
+###  5. Enterprise Security & UI
 - **Role-Based Access Control (RBAC):** Distinct permissions for Admins (Full Access) vs. Staff (Read/Issue only).
 - **Dark/Light Mode:** Persists user preference across sessions.
 - **Mobile Responsive:** Built with Bootstrap 4 & DashLite for perfect rendering on tablets and phones.
