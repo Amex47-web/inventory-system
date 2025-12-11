@@ -1,99 +1,150 @@
-# Stock Management System.
-I have developed a stock management system using Django, a web-based application that allows me to track and manage inventory levels, orders, sales, sales history, analytics and deliveries as well as keeping track of user's activities.
+#  Smart Stock Management System
 
-<h3>The Authentication System ensures secure access to the application through unique credentials and a forgot password functionality.</h3>
-<img src="https://user-images.githubusercontent.com/89584431/213690705-c82e9580-521c-43a3-b2ee-c702ff122d0b.png">
+A robust, enterprise-grade Inventory Management System built with **Django**. This application goes beyond simple counting by integrating **Machine Learning** for demand forecasting, **QR Code scanning** for quick lookup, and a **Bulk Cart** system for efficient stock distribution.
 
-<h3>A beautiful and responsive layout that adapts seamlessly to different screen sizes, providing a visually pleasing and user-friendly interface for all users, with the added convenience of switching between a light and dark mode.</h3>
-<img src="https://user-images.githubusercontent.com/89584431/213697819-ff34d0eb-8b16-49b9-bc5b-947f9485269c.png">
+Live Demo: [https://amey-inventory.onrender.com](https://amey-inventory.onrender.com) *(Replace with your actual link)*
 
-<h3>Dynamic charts that provide real-time data visualization of inventory levels, orders, sales, and deliveries.</h3>
-<img src="https://user-images.githubusercontent.com/89584431/213698869-f3516c2d-89d9-49d1-9f81-b0b3c32dd00b.png">
+---
 
-<h3>Add Stock with dynamic Categories.</h3>
-<img src="https://user-images.githubusercontent.com/89584431/213703517-32c3cbd7-e9e0-4a2e-ac68-7ffb3c16fead.png">
+##  Key Features
 
-<h3>The View Stock page integrates data tables with Django, allowing for easy management of inventory with features such as search, edit, view, reorder and delete stocks.</h3>
-<img src="https://user-images.githubusercontent.com/89584431/213707384-a08835e1-3322-40ac-b09f-186fa7a2b64f.png">
+###  1. AI-Powered Demand Forecasting
+Uses **Linear Regression (Scikit-Learn)** to analyze historical usage patterns and predict exactly when an item will run out of stock.
+- **Visual Trends:** View burn-rate charts.
+- **Smart Alerts:** "Days remaining" countdown based on actual consumption, not just static thresholds.
 
-<h3>Export to CSV.</h3>
-<img src="https://user-images.githubusercontent.com/89584431/213707880-1c9ce6fc-3ae8-43a6-908c-e27fc27d7694.png">
+###  2. QR Code Integration
+- **Scan-to-View:** Use your laptop or phone camera to scan item QR codes.
+- **Instant Lookup:** deeply integrated with the search system for rapid inventory audits.
 
-<h3>Issue to Customers and Recieve Stocks</h3>
-<img src="https://user-images.githubusercontent.com/89584431/213712524-32478065-e0cd-45f7-939e-2f9d41c82f63.gif" width="1011">
+### 🛒 3. Bulk Issue "Shopping Cart"
+- **Session-Based Cart:** Managers can add multiple items (Laptop, Mouse, Charger) to a temporary list.
+- **One-Click Checkout:** Issue all items to an employee in a single transaction, updating inventory instantly.
 
-<h3>Stock History.</h3>
-<img src="https://user-images.githubusercontent.com/89584431/213724568-efb11a9f-4957-46a1-9d5f-481ba61e28e3.png">
+### 📊 4. Financial & Activity Analytics
+- **Asset Valuation:** Real-time calculation of Total Inventory Value (Quantity × Unit Price).
+- **Interactive Dashboards:** Chart.js integration for visual breakdown of Stock Levels, Categories, and In/Out history.
+- **ABC Analysis:** Automated categorization of high-value vs. low-value stock.
 
-<h3>Filter Stock History and Export to CSV</h3>
-<img src="https://user-images.githubusercontent.com/89584431/213725337-8425c5a6-b579-4bc6-b4df-a758014d36d5.png">
+### 🛡️ 5. Enterprise Security & UI
+- **Role-Based Access Control (RBAC):** Distinct permissions for Admins (Full Access) vs. Staff (Read/Issue only).
+- **Dark/Light Mode:** Persists user preference across sessions.
+- **Mobile Responsive:** Built with Bootstrap 4 & DashLite for perfect rendering on tablets and phones.
 
-<h3>A Dependent form integrated with Ajax and Django.</h3>
-<img src="https://user-images.githubusercontent.com/89584431/213728174-72efb424-f79e-4cb6-8369-fae00b464e45.png">
+---
 
-<h3>A Contact Management Area.</h3>
-<img src="https://user-images.githubusercontent.com/89584431/213731328-b6d2efb5-716e-4696-85fb-5727ac2bcc2c.png">
+## 🛠️ Tech Stack
 
-  ## Contributing to Stock Management System
-I welcome and appreciate contributions to this open-source project!
+**Backend:**
+- Python 3.10+
+- Django 5.x
+- **ML/Data:** Scikit-Learn, NumPy, Pandas (for forecasting)
+- **Database:** PostgreSQL (Production), SQLite (Local Dev)
 
-## Getting Started.
-1. Fork this repository on GitHub
-2. Clone this repository to your local machine
-3. Create a new branch for your changes
+**Frontend:**
+- HTML5, CSS3, JavaScript
+- **Chart.js** (Data Visualization)
+- **Html5-Qrcode** (Scanner)
+- Bootstrap 4 (Responsive UI)
 
-## Making Changes.
-1. Add your changes
-2. Run tests (if applicable)
-3. Commit your changes with a clear and descriptive commit message
+**Deployment & DevOps:**
+- **Host:** Render.com
+- **Server:** Gunicorn
+- **Static Files:** WhiteNoise
+- **CI/CD:** Automatic deployment via GitHub
 
-## Submitting a Pull Request.
-1. Push your changes to your fork on GitHub
-2. Open a Pull Request and include a clear and descriptive title and explanation of your changes
-3. I will review and merge your changes
+---
 
-## Additional Resources
-- [Issue tracker](https://github.com/DonGuillotine/stock-management-system/issues)
+##  Screenshots
 
-## Django Installation Guide
+### **Smart Dashboard (Dark Mode)**
+*Real-time overview of assets, low stock alerts, and financial value.*
+<img src="https://user-images.githubusercontent.com/89584431/213697819-ff34d0eb-8b16-49b9-bc5b-947f9485269c.png" alt="Dashboard">
 
-![Django Logo](https://www.djangoproject.com/m/img/logos/django-logo-negative.png)
+### **AI Inventory Forecast**
+*Predictive analytics showing burn rate and estimated stockout dates.*
+<img src="https://user-images.githubusercontent.com/89584431/213698869-f3516c2d-89d9-49d1-9f81-b0b3c32dd00b.png" alt="AI Forecast">
 
-This guide will help you install Django for the first time on your local machine.
+### **Bulk Issue Cart**
+*Add multiple items to a cart and issue them in one go.*
+<img src="https://user-images.githubusercontent.com/89584431/213712524-32478065-e0cd-45f7-939e-2f9d41c82f63.gif" alt="Bulk Cart">
 
-## Prerequisites
-- Python3 installed on your machine
+### **Stock List with QR Support**
+*Manage inventory with search, edit, delete, and history tracking.*
+<img src="https://user-images.githubusercontent.com/89584431/213707384-a08835e1-3322-40ac-b09f-186fa7a2b64f.png" alt="Stock List">
 
-## Installation
-1. Open the terminal and run the following command to install Django:
+---
 
-```
-pip install django
-```
+##  Local Installation Guide
 
-2. Verify the installation by running the following command:
-```
-django-admin --version
-```
+Follow these steps to run the project on your machine.
 
-You should see the version number of Django that you just installed.
+**Prerequisites:** Python 3.10+ installed.
 
-## Create a Django Project
-1. Open the terminal and navigate to the desired directory where you want to create your Django project.
-2. Run the following command to create a new Django project:
-```
-django-admin startproject projectname
-```
-Replace "projectname" with the name of your project.
+1. **Clone the Repository**
+   ```bash
+   git clone [https://github.com/YOUR_USERNAME/inventory-system.git](https://github.com/YOUR_USERNAME/inventory-system.git)
+   cd inventory-system
+   Create Virtual Environment
 
-## Run the Development Server
-1. Navigate into the project directory using the following command:
-```
-cd projectname
-```
-2. Run the following command to start the development server:
-```
-python manage.py runserver
-```
+2. Create Virtual Environment
 
-Your Django project is now up and running on your local machine. Open your web browser and go to http://127.0.0.1:8000/ to see the default Django page.
+# Windows
+python -m venv venv
+.\venv\Scripts\activate
+
+# Mac/Linux
+python3 -m venv venv
+source venv/bin/activate
+
+
+3. Install Dependencies
+   pip install -r requirements.txt
+   
+5. Setup Database
+   python manage.py makemigrations
+python manage.py migrate
+
+7. Create Admin User
+   python manage.py createsuperuser
+   
+9. Run Server
+    python manage.py runserver
+
+
+   Deployment (Render.com)
+This project is configured for seamless deployment on Render.
+
+Fork/Clone this repo to your GitHub.
+
+Create a new Web Service on Render.
+
+Connect your repository.
+
+Environment Variables:
+
+PYTHON_VERSION: 3.10.0
+
+SECRET_KEY: (Generate a random string)
+
+DATABASE_URL: (Render creates this automatically if you link a Postgres DB)
+
+Build Command: ./build.sh
+
+Start Command: gunicorn stockmgtr.wsgi:application
+
+Contributing
+Contributions are welcome!
+
+Fork the project.
+
+Create your feature branch (git checkout -b feature/AmazingFeature).
+
+Commit your changes (git commit -m 'Add some AmazingFeature').
+
+Push to the branch (git push origin feature/AmazingFeature).
+
+Open a Pull Request.
+
+License
+Distributed under the MIT License. See LICENSE for more information.
